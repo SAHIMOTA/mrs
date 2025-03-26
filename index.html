@@ -1,0 +1,243 @@
+<!-- Data Tabled Css  -->
+<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.14/dist/sweetalert2.all.min.js"></script>
+    <!-- Fav  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" rel="stylesheet" />
+    <!-- Style for Dialog Box -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css">
+  
+<!-- font awesome icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  
+
+
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDAyIDc5LjE2NDM1MiwgMjAyMC8wMS8zMC0xNTo1MDozOCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjEgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkIyRkFBNzE1MzEyNTExRUQ4NkFBRjE2MTI3NjdFNDRCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkIyRkFBNzE2MzEyNTExRUQ4NkFBRjE2MTI3NjdFNDRCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjJGQUE3MTMzMTI1MTFFRDg2QUFGMTYxMjc2N0U0NEIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjJGQUE3MTQzMTI1MTFFRDg2QUFGMTYxMjc2N0U0NEIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4c0FRlAAAIMklEQVR42pRXC2yVZxl+/uv5z61rC5TODghMoEwcnfQSGK6aIcuC0mjZso04mQtkXkAzNW7qZjYlKjqnLtlFh9lwAxRwDjZZ0Myo4GTFbRSkgxYYdLT0xunp5Zzz332+7xyotadT/+Rrv+t7ed7nfb/vKGEYQnwbH8O4T+G0WFHYQv5xDfYVfEgLcB3nr+b0NDadbTBQ0am7+Kdt4ZASYJB9eUbI0Px8/9L3sw35/zr+l09BmRriE7RkOe1s4My8ccsB+ij8TdXHnzl8mfuP/DeR+nvrw/vpzTco9C7FH5ssfF1sYraMiqdxzwp6uoJObuKe19k2c233ZLLVSx2B+L+3QMGtbO3s34VA6tvO/ip2LTWQKFZxPJP/k1xUqLyOiGxiO0cj69l2cW6viJcSjLUJHgfCBG7yjXxf95DVXJzjeKvu4IFAo5U8GIT0LsBCGnNlwfs+huFtcuAwBR9m/1vsr6T3j/oqwmw8D1KgTAJ1JpknQSRLBZ5UvtfXsVcNJUmWUNEGdpsoPHaJfKIhj44443JtD888zamXeV7EGiQcBNm0cBLFQyV5T6engPgwx6WAZ+IjJUO0XEPNZZhCvEWPjuo+LghZVFRBZBYSjcU0vFlz0KwqOBHo+LKVxSseN0UzQMXIeHZfVixorxTyR8BtOnjCsnFPkI/5EU7/hOvPiHhzGa5WOOcVUo9GM663cN9XiUC9bmMft/6KW+4Ua0JpUcUCLlqPUAgM8HemRgMFhXYcaxnvraovvS2ljtX0sMEPMZtjg573EKmjPLuHyOw0A+wk15t4dhvnP614qGG4FlO3W5RcLA6IEQ7VRkskg1oKaktNxQ2Gi37GaBHPbKLSlWGBiFohvTxVku4WPYuHVQ1nXRPfpe1Pu3HEY2m0RIdRm0uiddDCglykiGKDkMVSeDZ5EbVnrkabY+GaygsSyu+FPu6TcAFpTcFWIvIXGtLBOYfeTKchdUSsmQbWmx5+wa3rmAXLTs1HneLiUPVx1HddiRczV6BpQh7PasNt8X7caTnwD6zE4hdvAyrPYidhva9QVb/C+Jcynhs53MW5twjjcSr7k2NgMxFqoBHX05gjQYD6ZB9SuQSmdFWz0gXITO3DqmvacfdEVhu4V+ZxFE1LDyE7HOCJTBSrzQwu0rolFHLSZzgCHx+gd2u4dxmPVRKoNInUQh5sY+ocoOKaZAbP2BF8puYg2oenobx7Jq4v7cOb/Rq+xDNbxscYuJ1xmzdqYN+sf2CFNYJ7BioQDlRh4ZnZ6F70OpAYxlOEeL3I7VAbq3iGjVoy9nNGBvudEjS33IC1c1pRFuvGqrSJl1oa8fHFB3HzrA6cnQA1Y3xqOIl9/VPBwGH7MCtOfATNtLj7nWquZ/CalsN6kWpeFA+R5bNF6fQMRN0I1lLxu0YWK7RRdPZXosSuQBPnBys7sbLx96il0a9kE2gbu/0KAdzwA1YZU1b9T1lp7NZ0HA4N1EVzzOksnk9buAMmTqSjqGeVGirNQGVKLaPnaSo4IjIliGFXdADNhLojOwVzbY+Ec7CLCP1x1MTHhKYt3/zPPM7lyyXJ84CAcWQID1rcmTOxkLG+w83BjiqoYVBzgxn83I9jXejLogE9gwxjvmYgjtWGhjeo5Dp9FDfx/G5PE7TAcq+HNYB39QSoo6IiBbiKm2ro9kgygn2hJ6vNIzrN8wPc63QjR0XP6hbWRQi5puJBAvZLChH1+4UZJ1EVy+FGj/udEI96lEnj9gj55eVYMq28yLWYGqCXo2jUFFlMfptjYR92kRD3rJOlXgePa1NQNcoSGFFhdxxDeTqFHyo27g6yuF0YN2Rh+0gOKSNEmiIXyBLp41VRZmnEDK/YfWwwvoxrtcCFkwfEFWgZuFkRV2SI503Cb7t4SMnfr5+1IkipKq9OA6c8FzsYiiEi8GF5uwZoEcrCfO3vLfSjflikckUsCescQgrfxekIDYlEsczNX2kvRC1ZKm91HCBrY9tVM7DOFZ64eE6cYSrKghjm4Z0hSrC8vwNMgSY9zyrFPC4tl8rnBq40J+PlDZgvPKTgo64nx0nKOC+MytlYL9Dh3LctEzfpGiIUvFlATqLNp5y0MIiI3ShfMAo6FaWI4t/tBE4cw29Kkngt3cN8s+Viuahm2VH0+x4SIv6ujTY7K4lVzdhDIMAwfYEGgDy4n/2vC6/h4WHPlqI/KdhvZ/C3XKaI4lZWpndO4kfxGJbC4RNVk+UxENbG4tBNHTaVwzRQcUWJ9Cot9nAvciMINE3GLcwO4jylHlMi+DEVNhFihXv305h04BdRLD4rmidE6fRC9AP0COsZq5mhA7dAkmv7+yUKfzB0GZ5KXoePCzSoYj9j+hwR+SCXZibi2C6QoOL7owk6kJhEsaJJZkMQKjcqifF2wWNZdQjXq5oqyTaHZnxHvvhV7Ej1Yv/QRT6HTCyPxDDMdDpIlp+1HUSZDdsSKt6IUKbpTaLYJ2yd7cCFc0Dvu8BAD14icdDVjarzvfI+/mnAw8kEdsSiOE2mt0YjaIwnsJnsvpbQ/pqGJmjcUm72KO/7MRNrSvl+S/IxSf4Uf9CL8vc+/jCJqJevrL/ywKItT6JDHP78F7HnfBd6CUJdLoc5R1tRN3cehhIJfI0oNY4MosGIYINhQNSo074PN8xnhXgWF3/Qy4GWj7MZGWs80GrFkBGEIgIghB/VFWwcSaG37Rgcz8MCetfOENeXlaHCNNHHEJ0Q70Eo/8dPmCCf9ON+rgjGCqtHmQ704jinO1wHTowVmtXrDAn4GJXPZkYMhRlZVADtvX87/UuAAQDcdL1KeJHl/wAAAABJRU5ErkJggg==">
+
+ 
+ 
+ <!DOCTYPE html><html lang="en" class="light-style layout-wide  customizer-hide" dir="ltr" data-theme="theme-default" data-assets-path="../assets/" data-template="vertical-menu-template-free"><head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.14/dist/sweetalert2.all.min.js"></script>
+    <style>
+    
+    
+        /* CSS for dark mode */
+        html {
+            filter: invert(1) hue-rotate(180deg);
+            background-color: rgba(255, 255, 255, 0.5);;
+        }
+ 
+        
+        html * {
+            background-color: inherit;
+            color: inherit;
+            border-color: inherit;
+        }
+
+        img:not([src*=".svg"]), video {
+            filter: invert(1) hue-rotate(180deg);
+        }
+    </style>
+</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+    <title>MrsTechnology.in.net :- A Complete Solution Of VLE</title>
+    
+
+    
+    <meta name="description" content="A Complete Solution Of CSC Vle Opretor">
+    <meta name="keywords" content="Mobile Update, Email Update, Address Update, Dob Update, Gender Update, Name Update, Etc">
+    <!-- Canonical SEO -->
+    <link rel="canonical" href="https://themeselection.com/item/sneat-bootstrap-html-admin-template/">
+    
+    
+    <!-- ? PROD Only: Google Tag Manager (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
+    <script async="" src="js/gtm.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5DDHKGP');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="css/boxicons.css">
+    
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="css/core.css" class="template-customizer-core-css">
+    <link rel="stylesheet" href="css/theme-default.css" class="template-customizer-theme-css">
+    <link rel="stylesheet" href="css/demo.css">
+    
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="css/perfect-scrollbar.css"> 
+    
+
+    <!-- Page CSS -->
+    <!-- Page -->
+<link rel="stylesheet" href="css/page-auth.css">
+
+    <!-- Helpers -->
+    <script src="js/helpers.js"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="js/config.js"></script>
+    
+</head>
+
+<body style="background: url('./ook.jpg');  background-size: cover;  background-position: center; background-repeat: no-repeat; ">
+
+  
+  <!-- ?PROD Only: Google Tag Manager (noscript) (Default ThemeSelection: GTM-5DDHKGP, PixInvent: GTM-5J3LMKC) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5DDHKGP" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  
+  <!-- Content -->
+
+<div class="container-xxl">
+  <div class="authentication-wrapper authentication-basic container-p-y">
+    <div class="authentication-inner">
+      <!-- Register -->
+      <div class="card" style="background-color: rgba(255, 255, 255, 0.5);">
+        <div class="card-body">
+          <!-- Logo -->
+          <div class="app-brand justify-content-center">
+            <a href="index.php" class="app-brand-link gap-2">
+              <span class="app-brand-logo demo">
+
+<svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <path d="M13.7918663,0.358365126 L3.39788168,7.44174259 C0.566865006,9.69408886 -0.379795268,12.4788597 0.557900856,15.7960551 C0.68998853,16.2305145 1.09562888,17.7872135 3.12357076,19.2293357 C3.8146334,19.7207684 5.32369333,20.3834223 7.65075054,21.2172976 L7.59773219,21.2525164 L2.63468769,24.5493413 C0.445452254,26.3002124 0.0884951797,28.5083815 1.56381646,31.1738486 C2.83770406,32.8170431 5.20850219,33.2640127 7.09180128,32.5391577 C8.347334,32.0559211 11.4559176,30.0011079 16.4175519,26.3747182 C18.0338572,24.4997857 18.6973423,22.4544883 18.4080071,20.2388261 C17.963753,17.5346866 16.1776345,15.5799961 13.0496516,14.3747546 L10.9194936,13.4715819 L18.6192054,7.984237 L13.7918663,0.358365126 Z" id="path-1"></path>
+    <path d="M5.47320593,6.00457225 C4.05321814,8.216144 4.36334763,10.0722806 6.40359441,11.5729822 C8.61520715,12.571656 10.0999176,13.2171421 10.8577257,13.5094407 L15.5088241,14.433041 L18.6192054,7.984237 C15.5364148,3.11535317 13.9273018,0.573395879 13.7918663,0.358365126 C13.5790555,0.511491653 10.8061687,2.3935607 5.47320593,6.00457225 Z" id="path-3"></path>
+    <path d="M7.50063644,21.2294429 L12.3234468,23.3159332 C14.1688022,24.7579751 14.397098,26.4880487 13.008334,28.506154 C11.6195701,30.5242593 10.3099883,31.790241 9.07958868,32.3040991 C5.78142938,33.4346997 4.13234973,34 4.13234973,34 C4.13234973,34 2.75489982,33.0538207 2.37032616e-14,31.1614621 C-0.55822714,27.8186216 -0.55822714,26.0572515 -4.05231404e-15,25.8773518 C0.83734071,25.6075023 2.77988457,22.8248993 3.3049379,22.52991 C3.65497346,22.3332504 5.05353963,21.8997614 7.50063644,21.2294429 Z" id="path-4"></path>
+    <path d="M20.6,7.13333333 L25.6,13.8 C26.2627417,14.6836556 26.0836556,15.9372583 25.2,16.6 C24.8538077,16.8596443 24.4327404,17 24,17 L14,17 C12.8954305,17 12,16.1045695 12,15 C12,14.5672596 12.1403557,14.1461923 12.4,13.8 L17.4,7.13333333 C18.0627417,6.24967773 19.3163444,6.07059163 20.2,6.73333333 C20.3516113,6.84704183 20.4862915,6.981722 20.6,7.13333333 Z" id="path-5"></path>
+  </defs>
+  <g id="g-app-brand" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Brand-Logo" transform="translate(-27.000000, -15.000000)">
+      <!--<g id="Icon" transform="translate(27.000000, 15.000000)">-->
+      <!--  <g id="Mask" transform="translate(0.000000, 8.000000)">-->
+      <!--    <mask id="mask-2" fill="white">-->
+      <!--      <use xlink:href="#path-1"></use>-->
+      <!--    </mask>-->
+      <!--    <use fill="#696cff" xlink:href="#path-1"></use>-->
+      <!--    <g id="Path-3" mask="url(#mask-2)">-->
+        <!--    <use fill="#696cff" xlink:href="#path-3"></use>-->
+        <!--    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-3"></use>-->
+        <!--  </g>-->
+        <!--  <g id="Path-4" mask="url(#mask-2)">-->
+        <!--    <use fill="#696cff" xlink:href="#path-4"></use>-->
+        <!--    <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-4"></use>-->
+        <!--  </g>-->
+        <!--</g>-->
+        <!--<g id="Triangle" transform="translate(19.000000, 11.000000) rotate(-300.000000) translate(-19.000000, -11.000000) ">-->
+        <!--  <use fill="#696cff" xlink:href="#path-5"></use>-->
+        <!--  <use fill-opacity="0.2" fill="#FFFFFF" xlink:href="#path-5"></use>-->
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
+
+</span>
+              <h3>MrsTechnology.in.net</h3>
+            </a>
+          </div>
+          <!-- /Logo -->
+          <h3 class="mb-2" style="color:green;">Welcome to Mrs</h3>
+          <p class="mb-4" style="background-color: aliceblue; color:red;">Enter Your Username & Password To Login This Panel.</p>
+
+          <form action="" method="POST">
+                         <div class="row g-3">
+		<div class="col-12">
+                                
+                                 <input type="hidden" name="secret" value="ahkwebsolutions">
+                                 <label for="username"><class="label-above">Username</label> 
+                                     <input type="text" class="form-control"  id="username" name="username" placeholder="Username, phone, emailid">
+                                     
+                                 </div>
+                             </div>
+                             <div class="col-12">
+                                 
+                                     <label for="password"> <class="label-above">Password</label> 
+                                     <input type="password" class="form-control"  id="password" name="password" placeholder="password">
+                                 </div>
+                             </div>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="remember-me">
+                <label class="form-check-label" for="remember-me">
+                  Remember Me
+                </label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+            </div>
+          </form>
+           <p class="mb-1">
+                        <a href="forgot-password.php" previewlistener="true"><h3>I forgot my password</h3></a>
+                    </p>
+        </div>
+      </div>
+      <!-- /Register -->
+    </div>
+  </div>
+</div>
+
+<!-- / Content -->
+
+  
+
+  
+  <div class="buy-now">
+    <a href="https://wa.me/+" target="_blank" class="btn btn-danger btn-buy-now">SUPPORT</a>
+  </div>
+  
+
+  <!-- Core JS -->
+  <!-- build:js assets/vendor/js/core.js -->
+  
+  <script src="js/jquery.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/perfect-scrollbar.js"></script>
+  <script src="js/menu.js"></script>
+  
+  <!-- endbuild -->
+
+  <!-- Vendors JS -->
+  
+  
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+  
+
+  <!-- Page JS -->
+  
+  
+  
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="" defer="" src="js/buttons.js"></script>
+  
+
+
+
+
+<!-- Start of HubSpot Embed Code -->
+ 
+<!-- End of HubSpot Embed Code -->
+
+</body></html>
